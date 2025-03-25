@@ -16,12 +16,13 @@
     "url": "https://github.com/ALcoder-24/intro-to-mongoose-lab/issues"
   },
   "homepage": "https://github.com/ALcoder-24/intro-to-mongoose-lab#readme",
-  "description": "",
   "dependencies": {
     "dotenv": "^16.4.7",
     "mongodb": "^6.15.0",
-    "mongoose": "^8.12.2",
+    "mongoose": "^8.13.0",
     "prompt-sync": "^4.2.0"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {},
+  "description": ""
 }

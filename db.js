@@ -1,5 +1,7 @@
 import mongoose from "mongoose";
-import "dotenv/config";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const connectDB = async () =>{
    try {
@@ -9,4 +11,15 @@ const connectDB = async () =>{
     console.error("MongoDB connection error:", error);
     }
 }; 
-export default connectDB;
+
+const disconnectDB = async () => {
+await mongoose.disconnect();
+console.log("Disconnected from MongoDB");
+
+};
+    
+
+
+export {connectDB, disconnectDB};
+
+

@@ -1,7 +1,6 @@
-
 import promptSync from 'prompt-sync';
 import { connectDB, disconnectDB} from "./db.js";
-import {listCustomers, updateCustomer} from "./crm.js";
+import {createCustomer, listCustomers, updateCustomer, deleteCustomer} from "./crm.js";
 
 const prompt = promptSync();
 
@@ -24,15 +23,19 @@ while (running) {
 switch (choice)  {
     case "1":
         console.log("[Create a Customer]");
+        await createCustomer(prompt);
         break;
     case "2": 
+        console.log("[View Customer]");
         await listCustomers(); 
         break;
     case "3":
+        console.log("[Update a Customer]");
         await updateCustomer(prompt);
         break;
     case "4":
         console.log("[Delete a Customer]");
+        await deleteCustomer(prompt);
         break;
     case "5":
         console.log("Goodbye!");
@@ -46,4 +49,3 @@ switch (choice)  {
 
  await disconnectDB();
  process.exit(); 
-

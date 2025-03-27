@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
 
 const customerSchema = new mongoose.Schema({
-    name: String,
-    age: Number,
+    name: {type: String, required: true},
+    age: {type: Number, required: true}
 });
 
 const Customer = mongoose.model("Customer", customerSchema);
